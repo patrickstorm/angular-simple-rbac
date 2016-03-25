@@ -1,4 +1,4 @@
-### Simple Angular RBAC
+# Simple Angular RBAC
 *Role Based Access Control* for angular in its simplest form.
 
 ## Dependencies
@@ -10,7 +10,7 @@
 - Shows/hides DOM elements based on roles/permissions
 - Redirect state changes if role or permission is not met for a route
 
-### Installation
+# Installation
 ## Bower
 ```
 bower install angular-simple-rbac --save
@@ -21,7 +21,7 @@ angular.module('yourModule', [..., 'ui.router', 'angular-simple-rbac',  ...]);
 ```
 **Important!** Angular permission is using ui-router state decoration to be able to inherit permissions/roles from parent states. So make sure that permission dependency is included just after ui-router as in example above.
 
-### Defining Roles and Permissions
+# Defining Roles and Permissions
 ## Roles
 ```javascript
 // You want to give different hax0rs different permissions.
@@ -47,7 +47,7 @@ That's it. The roles and permissions are set. You can just set permissions, but 
 
 But what format should roles be in? Glad you asked...
 
-# Formats accepted by setRoles and setPermissions
+### Formats accepted by setRoles and setPermissions
 ```javascript
 // Basic arrays
 var roles = ['admin','member']
@@ -75,7 +75,7 @@ Pretty sweet, huh? Well, I think so.
 
 Now, how do I use the roles and permissions now that they are set? Glad you asked...
 
-### Using to Control Access
+# Using to Control Access
 After roles are set, we can now use them to control what users can see.
 
 ## Showing and hiding dom elements
@@ -134,10 +134,10 @@ var rbac = {
   except: [], // must contain none of these roles or permissions
 }
 ```
-# Redirecting if roles or permissions are denied
+### Redirecting if roles or permissions are denied
 If a user's roles and permissions don't meet the state's required permissions, then we do not allow the state change. This is not the best user experience in cases, so you can also set the attribue `redirectTo`. This takes a state name as a parameter and redirects the user to that state on a failed authorization.
 
-# How do I know if state change was canceled because of this RBAC?
+### How do I know if state change was canceled because of this RBAC?
 Listen for the 'rbac.$stateChangeDenied' broadcast.
 ```javascript
 // Get's broadcasted when a state change is denied
@@ -148,12 +148,12 @@ $scope.$on('rbac.$stateChangeDenied', function(){
 
 That's the basics. Nearly every function in this module has a comment of what it does. I encourange you to explore, and pull requests are always welcome!
 
-### Roadmap
+# Roadmap
 - Add to npm
 - Integrate grunt into dev workflow
 - Add roles and permissions to local storage. Currently page refreshes will require you to set roles/permissions again.
 - Add ability to spoof roles. I use this for testing, I might as well add it in to the package.
 
-### Author
+## Author
 - Patrick Toerner
 - [patricktoerner.com](http://patricktoerner.com)
