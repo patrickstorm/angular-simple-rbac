@@ -1,0 +1,3 @@
+* Hostname was NOT found in DNS cache
+* Could not resolve host: sandbox.api.chamberofcommerce.com
+* Closing connection 0
